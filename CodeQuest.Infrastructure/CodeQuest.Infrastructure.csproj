@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CodeQuest.Application\CodeQuest.Application.csproj" />
+    <ProjectReference Include="..\CodeQuest.Domain\CodeQuest.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
