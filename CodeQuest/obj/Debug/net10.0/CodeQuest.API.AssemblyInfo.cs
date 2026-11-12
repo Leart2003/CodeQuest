@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CodeQuest.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eb63d154fcfe247a0ff2fc21da757be1d4eebd79")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+681ec19ec28d4cc4357f5acf2e81b77332ffee84")]
 [assembly: System.Reflection.AssemblyProductAttribute("CodeQuest.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CodeQuest.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
