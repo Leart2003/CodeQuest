@@ -1,11 +1,49 @@
 {
   "version": 4,
   "targets": {
-    "net10.0": {}
+    "net10.0": {
+      "CodeQuest.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "dependencies": {
+          "CodeQuest.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CodeQuest.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CodeQuest.Application.dll": {}
+        }
+      },
+      "CodeQuest.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/CodeQuest.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CodeQuest.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CodeQuest.Application/1.0.0": {
+      "type": "project",
+      "path": "../CodeQuest.Application/CodeQuest.Application.csproj",
+      "msbuildProject": "../CodeQuest.Application/CodeQuest.Application.csproj"
+    },
+    "CodeQuest.Domain/1.0.0": {
+      "type": "project",
+      "path": "../CodeQuest.Domain/CodeQuest.Domain.csproj",
+      "msbuildProject": "../CodeQuest.Domain/CodeQuest.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net10.0": []
+    "net10.0": [
+      "CodeQuest.Application >= 1.0.0",
+      "CodeQuest.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\malok\\.nuget\\packages\\": {},
@@ -40,7 +78,14 @@
         "net10.0": {
           "framework": "net10.0",
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest.Application\\CodeQuest.Application.csproj": {
+              "projectPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest.Application\\CodeQuest.Application.csproj"
+            },
+            "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest.Domain\\CodeQuest.Domain.csproj": {
+              "projectPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest.Domain\\CodeQuest.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
