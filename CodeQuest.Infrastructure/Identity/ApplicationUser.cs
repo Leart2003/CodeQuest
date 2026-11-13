@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.AspNet.Identity.EntityFramework;
+﻿using Microsoft.AspNetCore.Identity;
+
 namespace CodeQuest.Infrastructure.Identity
 {
     public class ApplicationUser : IdentityUser
