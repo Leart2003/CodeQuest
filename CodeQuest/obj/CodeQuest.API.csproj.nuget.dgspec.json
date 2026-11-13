@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\CodeQuest.API.csproj": {}
+    "C:\\Users\\malok\\source\\repos\\CodeQuest\\codequest\\CodeQuest.API.csproj": {}
   },
   "projects": {
     "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest.Application\\CodeQuest.Application.csproj": {
@@ -1059,14 +1059,14 @@
         }
       }
     },
-    "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\CodeQuest.API.csproj": {
+    "C:\\Users\\malok\\source\\repos\\CodeQuest\\codequest\\CodeQuest.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\CodeQuest.API.csproj",
+        "projectUniqueName": "C:\\Users\\malok\\source\\repos\\CodeQuest\\codequest\\CodeQuest.API.csproj",
         "projectName": "CodeQuest.API",
-        "projectPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\CodeQuest.API.csproj",
+        "projectPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\codequest\\CodeQuest.API.csproj",
         "packagesPath": "C:\\Users\\malok\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\obj\\",
+        "outputPath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\codequest\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1128,6 +1128,10 @@
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[10.0.0, )"
             }
