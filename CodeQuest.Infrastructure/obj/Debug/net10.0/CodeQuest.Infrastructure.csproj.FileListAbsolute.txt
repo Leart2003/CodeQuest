@@ -1,0 +1,6 @@
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.AssemblyInfo.cs
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\malok\source\repos\CodeQuest\CodeQuest.Infrastructure\obj\Debug\net10.0\CodeQuest.Infrastructure.sourcelink.json

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "+MHs0Uj/cCU=",
+  "dgSpecHash": "gHsFRI+Gvls=",
   "success": true,
   "projectFilePath": "C:\\Users\\malok\\source\\repos\\CodeQuest\\CodeQuest\\CodeQuest.API.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,9 @@
     "C:\\Users\\malok\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\malok\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.4\\microsoft.aspnet.identity.entityframework.2.2.4.nupkg.sha512",
     "C:\\Users\\malok\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.15\\microsoft.aspnetcore.openapi.10.0.15.nupkg.sha512",
+    "C:\\Users\\malok\\.nuget\\packages\\microsoft.entityframeworkcore\\10.0.0\\microsoft.entityframeworkcore.10.0.0.nupkg.sha512",
+    "C:\\Users\\malok\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\10.0.0\\microsoft.entityframeworkcore.abstractions.10.0.0.nupkg.sha512",
+    "C:\\Users\\malok\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\10.0.0\\microsoft.entityframeworkcore.analyzers.10.0.0.nupkg.sha512",
     "C:\\Users\\malok\\.nuget\\packages\\microsoft.openapi\\2.13.0\\microsoft.openapi.2.13.0.nupkg.sha512"
   ],
   "logs": [
