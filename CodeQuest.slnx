@@ -1,3 +1,6 @@
 <Solution>
-  <Project Path="CodeQuest/CodeQuest.csproj" />
+  <Project Path="CodeQuest.Application/CodeQuest.Application.csproj" />
+  <Project Path="CodeQuest.Domain/CodeQuest.Domain.csproj" />
+  <Project Path="CodeQuest.Infrastructure/CodeQuest.Infrastructure.csproj" />
+  <Project Path="CodeQuest/CodeQuest.API.csproj" />
 </Solution>

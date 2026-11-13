@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CodeQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1418ded6ddfcd3309c82a65e31502ee173908391")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+70e35d76b6e883012de23652be143390553a32af")]
 [assembly: System.Reflection.AssemblyProductAttribute("CodeQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CodeQuest.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
