@@ -8,4 +8,6 @@ public interface IGameService
     Task<bool> IsLevelUnlockedAsync(int levelId, string userId);
     Task<LevelDetailDto?> GetLevelAsync(int levelId);
     Task<SubmitResultDto> SubmitAnswerAsync(int levelId, SubmitAnswerDto dto, string userId);
+
+    Task<List<LeaderboardEntryDto>> GetLeaderboardAsync(int top);
 }

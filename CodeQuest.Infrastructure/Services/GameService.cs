@@ -219,6 +219,36 @@ namespace CodeQuest.Infrastructure.Services
             return nextWorld?.Levels.OrderBy(l => l.Order).FirstOrDefault()?.Id;
         }
 
+        public async Task<List<LeaderboardEntryDto>> GetLeaderboardAsync(int top)
+        {
+           var users = await _context.Users
+                .OrderByDescending(u => u.TotalXp)
+                .ThenBy(u=> u.UserName)
+                .Take(top)
+                .Select(u => new { u.Id, u.UserName, u.TotalXp })
+                .ToListAsync();
 
+            var ids = users.Select(u => u.Id).ToList();
+
+
+            var completeCounts = await _context.UserProgresses
+                .Where(p => p.IsCompleted && ids.Contains(p.UserId))
+                .GroupBy(p => p.UserId)
+                 .Select(g => new { UserId = g.Key, Count = g.Count() })
+                 .ToDictionaryAsync(x => x.UserId, x => x.Count);
+
+
+            return users
+                .Select((u, index) => new LeaderboardEntryDto
+                {
+                    Rank = index + 1,
+                    Username = u.UserName ?? string.Empty,
+                    TotalXp = u.TotalXp,
+                    CompletedLevels = completeCounts.GetValueOrDefault(u.Id)
+                }
+                )
+                .ToList();
+
+        }
     }
 }
