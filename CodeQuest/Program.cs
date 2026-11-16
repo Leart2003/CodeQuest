@@ -15,6 +15,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<IGameService, GameService>();
 
+
+
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>(options =>
 {
     options.Password.RequireNonAlphanumeric = false;
@@ -51,6 +53,7 @@ builder.Services.AddCors(options =>
               .AllowCredentials());
 });
 
+
 //Swagger services
 
 builder.Services.AddEndpointsApiExplorer();
@@ -61,6 +64,13 @@ using (var scope = app.Services.CreateScope())
 {
     var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     await DbSeeder.SeedAsync(context);
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await IdentitySeeder.SeedAdminAsync(
+        userManager,
+        roleManager,
+        builder.Configuration["AdminUser:Username"] ?? "admin",
+        builder.Configuration["AdminUser:Password"] ?? "Admin123");
 }
 
 // Configure the HTTP request pipeline.
