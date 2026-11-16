@@ -33,7 +33,7 @@ namespace CodeQuest.API.Controllers
                 return BadRequest(result.Errors.Select(e => e.Description));
 
             await _signInManager.SignInAsync(user, isPersistent: true);
-            return Ok(new { user.UserName, user.TotalXp });
+            return Ok(new { user.UserName, user.TotalXp, IsAdmin = false });
         }
 
         [HttpPost("login")]
@@ -46,7 +46,8 @@ namespace CodeQuest.API.Controllers
                 return Unauthorized(new { message = "Invalid username or password." });
 
             var user = await _userManager.FindByNameAsync(dto.Username);
-            return Ok(new { user!.UserName, user.TotalXp });
+            var isAdmin = await _userManager.IsInRoleAsync(user!, "Admin");
+            return Ok(new { user!.UserName, user.TotalXp, IsAdmin = isAdmin });
         }
 
         [HttpPost("logout")]
@@ -64,7 +65,12 @@ namespace CodeQuest.API.Controllers
             if (user is null)
                 return Unauthorized();
 
-            return Ok(new { user.UserName, user.TotalXp });
+            return Ok(new
+            {
+                user.UserName,
+                user.TotalXp,
+                IsAdmin = await _userManager.IsInRoleAsync(user, "Admin")
+            });
         }
     }
 }
