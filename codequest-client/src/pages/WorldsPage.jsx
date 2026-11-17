@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../api";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../useAuth";
+import Navbar from "../Components/NavBar";
 
 export default function WorldsPage() {
   const { user } = useAuth();

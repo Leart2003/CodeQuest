@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import { AuthProvider, useAuth } from "./AuthContext";
+import { AuthProvider } from "./AuthContext.jsx";
+import { useAuth } from "./useAuth";
 import LoginPage from "./pages/LoginPage";
 import WorldsPage from "./pages/WorldsPage";
+import LevelPage from "./pages/LevelPage";
 
 function ProtectedRoute({ children }) {
   const { user, loading } = useAuth();
@@ -21,6 +23,14 @@ export default function App() {
             element={
               <ProtectedRoute>
                 <WorldsPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/levels/:id"
+            element={
+              <ProtectedRoute>
+                <LevelPage />
               </ProtectedRoute>
             }
           />

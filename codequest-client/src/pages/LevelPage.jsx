@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../api";
-import { useAuth } from "../AuthContext";
+import { useAuth } from "../useAuth";
+import Navbar from "../Components/NavBar";
 
 const TYPE_LABELS = {
   MultipleChoice: "Multiple choice",

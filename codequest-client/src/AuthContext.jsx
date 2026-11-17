@@ -1,7 +1,6 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { api } from "./api";
-
-const AuthContext = createContext(null);
+import { AuthContext } from "./AuthContextValue";
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -29,15 +28,14 @@ export function AuthProvider({ children }) {
     setUser(null);
   }
 
+  function updateXp(totalXp) {
+    setUser((current) => current ? { ...current, totalXp } : current);
+  }
+
   return (
-   <AuthContext.Provider value={{ user, loading, login, register, logout, updateXp }}></AuthContext.Provider>
+    <AuthContext.Provider value={{ user, loading, login, register, logout, updateXp }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
 
-export function useAuth() {
-  return useContext(AuthContext);
-}
-
-function updateXp(totalXp) {
-  setUser((current) => ({ ...current, totalXp }));
-}
