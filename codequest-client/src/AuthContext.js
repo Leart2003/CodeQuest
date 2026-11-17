@@ -1,0 +1,43 @@
+import { createContext, useContext, useEffect, useState } from "react";
+import { api } from "./api";
+
+const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // on page load, ask the API if we already have a valid cookie
+  useEffect(() => {
+    api
+      .get("/api/auth/me")
+      .then(setUser)
+      .catch(() => setUser(null))
+      .finally(() => setLoading(false));
+  }, []);
+
+  async function login(username, password) {
+    setUser(await api.post("/api/auth/login", { username, password }));
+  }
+
+  async function register(username, password) {
+    setUser(await api.post("/api/auth/register", { username, password }));
+  }
+
+  async function logout() {
+    await api.post("/api/auth/logout");
+    setUser(null);
+  }
+
+  return (
+   <AuthContext.Provider value={{ user, loading, login, register, logout, updateXp }}></AuthContext.Provider>
+  );
+}
+
+export function useAuth() {
+  return useContext(AuthContext);
+}
+
+function updateXp(totalXp) {
+  setUser((current) => ({ ...current, totalXp }));
+}
