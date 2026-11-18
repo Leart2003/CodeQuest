@@ -80,9 +80,10 @@ namespace CodeQuest.Infrastructure.Services
             return result;
 
         }
-        public Task<bool> IsLevelUnlockedAsync(int levelId, string userId)
+        public async Task<bool> IsLevelUnlockedAsync(int levelId, string userId)
         {
-            throw new NotImplementedException();
+            var worlds = await GetWorldsAsync(userId);
+            return worlds.SelectMany(w => w.Levels).Any(l => l.Id == levelId && l.IsUnlocked);
         }
         public async Task<LevelDetailDto?> GetLevelAsync(int levelId)
         {
