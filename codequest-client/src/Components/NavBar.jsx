@@ -11,6 +11,7 @@ export default function Navbar() {
       </Link>
       <div className="nav-right">
         <Link to="/leaderboard">Leaderboard</Link>
+        {user.isAdmin && <Link to="/admin">Admin</Link>}
         <span className="chip xp">{user.totalXp} XP</span>
         <button className="btn" onClick={logout}>
           Log out

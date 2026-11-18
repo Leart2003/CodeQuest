@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { api, errorMessages } from "../../api";
+import Navbar from "../../Components/NavBar";
 
 const TYPE_LABELS = {
   MultipleChoice: "Multiple choice",
@@ -29,7 +30,23 @@ export default function AdminLevelsPage() {
   }
 
   useEffect(() => {
-    load();
+    let cancelled = false;
+    Promise.all([
+      api.get("/api/admin/worlds"),
+      api.get(`/api/admin/levels?worldId=${worldId}`),
+    ])
+      .then(([worlds, levelList]) => {
+        if (cancelled) return;
+        setWorld(worlds.find((w) => w.id === Number(worldId)) ?? null);
+        setLevels(levelList);
+      })
+      .catch((err) => {
+        if (!cancelled) setErrors(errorMessages(err));
+      });
+
+    return () => {
+      cancelled = true;
+    };
   }, [worldId]);
 
   async function remove(level) {

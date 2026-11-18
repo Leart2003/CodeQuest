@@ -10,13 +10,17 @@ export default function WorldsPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    api
-      .get("/api/worlds")
-      .then(setWorlds)
-      .catch(() => setError("Could not load the worlds."))
-      .finally(() => setLoading(false));
-  }, []);
+useEffect(() => {
+  api
+    .get("/api/worlds")
+    .then((data) => {
+      console.log("worlds response:", data);
+      setWorlds(Array.isArray(data) ? data : []);
+      if (!Array.isArray(data)) setError("The API returned an unexpected response.");
+    })
+    .catch(() => setError("Could not load the worlds."))
+    .finally(() => setLoading(false));
+}, []);
 
   const totalLevels = worlds.reduce((sum, w) => sum + w.totalLevels, 0);
   const completedLevels = worlds.reduce((sum, w) => sum + w.completedLevels, 0);
