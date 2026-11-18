@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/login", "destination": "/index.html" },
+    { "source": "/levels/:id", "destination": "/index.html" },
+    { "source": "/leaderboard", "destination": "/index.html" },
+    { "source": "/admin/worlds/:worldId/levels/new", "destination": "/index.html" },
+    { "source": "/admin/levels/:id/edit", "destination": "/index.html" },
+    { "source": "/admin/worlds/:worldId", "destination": "/index.html" },
+    { "source": "/admin", "destination": "/index.html" }
+  ]
+}
