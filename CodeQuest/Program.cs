@@ -33,6 +33,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.SlidingExpiration = true;
     options.Cookie.SecurePolicy = CookieSecurePolicy.Always;
 
+
     options.Events.OnRedirectToLogin = context =>
     {
         context.Response.StatusCode = 401;
