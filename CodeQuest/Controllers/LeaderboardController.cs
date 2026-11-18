@@ -1,11 +1,13 @@
 ﻿using CodeQuest.Application.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeQuest.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
+    [Route("api/leaderboard")]
     public class LeaderboardController : ControllerBase
     {
         private readonly IGameService _gameService;
