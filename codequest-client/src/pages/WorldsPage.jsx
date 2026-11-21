@@ -14,7 +14,6 @@ useEffect(() => {
   api
     .get("/api/worlds")
     .then((data) => {
-      console.log("worlds response:", data);
       setWorlds(Array.isArray(data) ? data : []);
       if (!Array.isArray(data)) setError("The API returned an unexpected response.");
     })
