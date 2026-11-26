@@ -6,7 +6,6 @@ using System.Security.Claims;
 
 namespace CodeQuest.API.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("api/worlds")]
     public class WorldsController : ControllerBase

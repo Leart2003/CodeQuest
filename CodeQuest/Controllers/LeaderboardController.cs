@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CodeQuest.API.Controllers
 {
-    [Authorize]
+    
     [ApiController]
     [Route("api/leaderboard")]
     public class LeaderboardController : ControllerBase
